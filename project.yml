@@ -1,0 +1,19 @@
+parameters: {}
+environment: {}
+packages:
+    - name: scheduler
+      shared: false
+      environment: {}
+      parameters: {}
+      annotations: {}
+      functions:
+        - name: droplet-snapshot
+          binary: false
+          main: ""
+          runtime: python:default
+          web: false
+          websecure: false
+          parameters: {}
+          environment: { 'TOKEN': ${TOKEN} } 
+          annotations: {}
+          limits: {}
