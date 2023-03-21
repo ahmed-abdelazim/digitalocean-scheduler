@@ -7,6 +7,11 @@ Add `TOKEN` as environment variable before deployment (this is the Digital Ocean
 ### Deploy the function
 
 `doctl serverless deploy .`
+
+### Get volume ID
+
+`doctl compute volume ls`
+
 ```
 doctl compute droplet-action snapshot 340456218 --snapshot-name '<snapshot-name>'
 doctl compute volume snapshot <volume-id> --snapshot-name '<snapshot-name>'
