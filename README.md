@@ -3,8 +3,13 @@
 ### Before runnig
 
 Add `TOKEN` as environment variable before deployment (this is the Digital Ocean token)
+
+## Install doctl
+follow this guide https://docs.digitalocean.com/reference/doctl/how-to/install/
+Make sure that you install serverless functions support
+
 ### Add droplets to the snapshot process
-To add droplets you have to give it this tag `backup-true`
+To add a droplet you have to give it this tag `backup-true`
 
 ### Deploy the function
 
