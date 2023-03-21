@@ -3,6 +3,8 @@
 ### Before runnig
 
 Add `TOKEN` as environment variable before deployment (this is the Digital Ocean token)
+### Add droplets to the snapshot process
+To add droplets you have to give it this tag `backup-true`
 
 ### Deploy the function
 

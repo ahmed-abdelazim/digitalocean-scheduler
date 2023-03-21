@@ -8,11 +8,11 @@ def main(args):
       print("Current timestamp", str_date_time)
       # name = args.get("name", "stranger")
       #print(args.get('droplets'))
-      print(digitalocean.Volume(token=os.getenv('TOKEN'), id="a8258f70-c722-11ed-a838-0a58ac1447fa").snapshot(name="wordpress-backup-vol_"+str_date_time))
-      print(digitalocean.Droplet(token=os.getenv('TOKEN'), id="203453589").take_snapshot(snapshot_name="Indian-server_"+str_date_time))
-      print(digitalocean.Droplet(token=os.getenv('TOKEN'), id="340456218").take_snapshot(snapshot_name="Wordpress_"+str_date_time))
-      #return {"body":  manager.get_all_droplets()[0].__dict__}
+      for v in manager.get_all_volumes():
+            print(digitalocean.Volume(token=os.getenv('TOKEN'), id=str(v.id)).snapshot(name=v.name+"_"+str(v.id)+"_"+str_date_time))
+      for i in manager.get_all_droplets(tag_name="backup-true"):
+            print(digitalocean.Droplet(token=os.getenv('TOKEN'), id=str(i.id)).take_snapshot(snapshot_name=i.name+"_"+str(i.id)+"_"+str_date_time))
+
       return {"body":  "ok"}
-      # return {"body": my_projects}
 if __name__ == "__main__":
       main({'droplets': ['203453589','340456218']})
