@@ -6,6 +6,7 @@ def main(args):
       date_time = datetime.fromtimestamp(timestamp)
       str_date_time = date_time.strftime("%d-%m-%Y_%H:%M:%S")
       print("Current timestamp", str_date_time)
+      manager = digitalocean.Manager(token=os.getenv('TOKEN'))
       # name = args.get("name", "stranger")
       #print(args.get('droplets'))
       for v in manager.get_all_volumes():
